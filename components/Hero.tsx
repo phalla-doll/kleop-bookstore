@@ -57,9 +57,10 @@ export function Hero() {
       <div ref={ref} className="relative w-full h-[400px] md:h-[600px] rounded-[2.5rem] overflow-hidden group">
         <motion.div style={{ y }} className="absolute inset-0 -top-[20%] h-[140%] w-full">
           <Image 
-            src="https://picsum.photos/seed/librarycreative/1600/900" 
-            alt="Creative Library" 
+            src="https://unsplash.com/photos/bSEHGGvCqo8/download?force=true&w=1600" 
+            alt="Woman in front of a bookshelf" 
             fill 
+            unoptimized
             className="object-cover transition-transform duration-1000 group-hover:scale-105"
             referrerPolicy="no-referrer"
           />
