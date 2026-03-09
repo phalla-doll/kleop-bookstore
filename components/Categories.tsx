@@ -1,36 +1,43 @@
+import { ArrowRight } from 'lucide-react';
+
 const categories = [
-  { name: 'Mystery', size: 'large', color: 'bg-brand-dark text-white' },
-  { name: 'Fiction', size: 'medium', color: 'bg-white text-brand-dark' },
-  { name: 'Horror', size: 'small', color: 'bg-brand-orange text-white' },
-  { name: 'Science Fiction', size: 'large', color: 'bg-white text-brand-dark' },
-  { name: 'Romance', size: 'medium', color: 'bg-brand-dark text-white' },
-  { name: 'Business', size: 'small', color: 'bg-white text-brand-dark' },
-  { name: 'Memoir', size: 'medium', color: 'bg-brand-orange text-white' },
-  { name: 'Economics', size: 'large', color: 'bg-white text-brand-dark' },
-  { name: 'Thriller', size: 'medium', color: 'bg-brand-dark text-white' },
+  'Mystery & Thriller',
+  'Historical Fiction',
+  'Romance',
+  'Science Fiction',
+  'Fantasy',
+  'Biography & Memoir',
+  'Business & Economics',
+  'Self-Help',
+  'Poetry',
+  'Graphic Novels',
+  'Young Adult',
+  'True Crime'
 ];
 
 export function Categories() {
   return (
-    <section className="w-full py-24 relative z-10 bg-black/5 mt-12">
+    <section className="w-full py-24 relative z-10 bg-white mt-12 border-y border-black/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-5xl md:text-6xl font-bold mb-16">Browse by <span className="italic font-light text-brand-orange">Genre</span></h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">Browse by <span className="italic font-light text-brand-orange">Genre</span></h2>
+        <p className="text-brand-gray max-w-2xl mx-auto mb-12 text-lg">Find your next favorite book by exploring our wide range of categories.</p>
         
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 max-w-4xl mx-auto">
           {categories.map((cat) => (
             <button
-              key={cat.name}
-              className={`
-                rounded-full font-bold transition-all transform hover:scale-105 hover:-rotate-2 cursor-pointer shadow-sm hover:shadow-xl border border-black/5
-                ${cat.color}
-                ${cat.size === 'large' ? 'px-10 py-5 text-xl md:text-2xl' : ''}
-                ${cat.size === 'medium' ? 'px-8 py-4 text-lg md:text-xl' : ''}
-                ${cat.size === 'small' ? 'px-6 py-3 text-base md:text-lg' : ''}
-              `}
+              key={cat}
+              className="group flex items-center gap-2 px-6 py-3 rounded-full border border-black/10 bg-brand-light hover:bg-brand-orange hover:border-brand-orange hover:text-white transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md text-sm md:text-base font-medium text-brand-dark"
             >
-              {cat.name}
+              {cat}
+              <ArrowRight size={14} className="opacity-0 -ml-4 w-0 group-hover:w-auto group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
             </button>
           ))}
+        </div>
+        
+        <div className="mt-16">
+           <button className="text-brand-dark font-bold hover:text-brand-orange transition-colors underline underline-offset-8 decoration-2 decoration-brand-orange/30 hover:decoration-brand-orange cursor-pointer">
+             Explore all 30+ categories
+           </button>
         </div>
       </div>
     </section>
