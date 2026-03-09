@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Clash Display", sans-serif;
+  --font-body: "Satoshi", sans-serif;
+  
+  --color-brand-orange: #F2754E;
+  --color-brand-orange-hover: #E0633C;
+  --color-brand-dark: #1E1E1E;
+  --color-brand-light: #FDFBF7;
+  --color-brand-gray: #8A8A8A;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-light);
+    color: var(--color-brand-dark);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+  .glass-nav {
+    background: rgba(253, 251, 247, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-brand-dark);
+  }
+  .text-outline-light {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
